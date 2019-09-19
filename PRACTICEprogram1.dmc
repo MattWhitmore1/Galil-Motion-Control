@@ -1,6 +1,6 @@
 SH ABC	;							'Turns on motors A,B,and C
-DP 0,0,0;						'Define Current Positions as 0
+DP 0,0,0  ;						'Define Current Positions as 0
 SP 9000,9000,9000;		'Set Speed to 4000 cnts/second?
-BG;									'Begin Motion
-WT 10000;						'Wait 10 seconds
-ST;									'Stop Motion
+BG  ;									'Begin Motion
+WT 10000  ;						'Wait 10 seconds
+ST  ;									'Stop Motion
