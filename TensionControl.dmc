@@ -26,5 +26,5 @@ IF (GMR > 0.3);   'If lever is dropped, execute PID controls.
     SPB = _SPB + output;    'Adds PID output to current bobbin speed.
   ENDIF;
 ENDIF;
-WT 10;    'Wait 0.010 seconds.
+ASB;    'After Axis B reaches the commanded speed.
 JP #PIDLoop;    'Jump back to beginning of the PID loop.
