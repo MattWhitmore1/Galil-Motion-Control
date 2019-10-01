@@ -1,15 +1,15 @@
 '#AUTO;  'defines code to run automatically when power is applied to the controller. 
 'Encoder Note: 1,000 counts = 1 revolution
-SH BC;  'Turn on B and C axis.
+SH BC;  'Configures Servo Motors on B and C axis.
 DP ,0,0;    'Define current positions as 0.
 AC ,10000,10000;  'Set Acceleration at 10 rev/s^2.
-SP ,1000,1000;    'Set Speed to 25 rev/s. (Will be input from LabVIEW later)
+SP ,1000,1000;    'Set Speed to 1 rev/s. (Will be input from LabVIEW later)
 
 goal = ?;   'Defines target value, (GMR Analog output when positioned horizontally). 
 previous_error = 0;   'Sets initial value before loop.
 integral = 0;   'Sets initial value before loop
 
-dt = 0.01;   'Defines PID Parameters.
+dt = 0.010;   'Defines PID Parameters.
 kp = 1;
 ki = 0;
 kd = 0;
