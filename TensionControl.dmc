@@ -22,9 +22,9 @@ IF (GMR > 0.3);   'If lever is dropped, execute PID controls.
   derivative = (error - previous_error)/dt;
   output = (kp*error) + (ki*integral) + (kd*derivative);
   previous_error = error;
-  IF (_SPB < 10000);    'Limits bobbin speed to a max of 600 RPM.
-    SPB = _SPB + output;    'Adds PID output to current bobbin speed.
+  IF (_DPA < -4500);    'Limits maximum totter position.
+    IPA = output;    'Adds PID output to current totter position.
   ENDIF;
 ENDIF;
-ASB;    'After Axis B reaches the commanded speed.
+WT 10;
 JP #PIDLoop;    'Jump back to beginning of the PID loop.
