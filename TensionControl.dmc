@@ -22,7 +22,7 @@ IF (GMR > 0.3);   'If lever is dropped, execute PID controls.
   derivative = (error - previous_error)/dt;
   output = (kp*error) + (ki*integral) + (kd*derivative);
   previous_error = error;
-  IF (_DPA < -4500);    'Limits maximum totter position.
+  IF (_DPA < -4250);    'Limits maximum totter position.
     IPA = output;    'Adds PID output to current totter position.
   ENDIF;
 ENDIF;
